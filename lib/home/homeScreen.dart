@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:yakcheduler/components/customeShapeWidget.dart';
 import 'package:yakcheduler/map/naverMapScreen.dart';
 import 'package:yakcheduler/receipt/cameraScreen.dart';
 
 import '../dosage/dosageCertScreen.dart';
 
+// StatefulWidget
+// 정의: StatefulWidget은 상태를 가지는 위젯입니다. 위젯의 상태가 변경되면 UI가 업데이트됩니다.
+// 용도: 동적인 UI 요소를 구현할 때 사용합니다. 사용자 입력, 애니메이션, 데이터 업데이트 등 상태에 따라 UI가 변하는 경우에 적합합니다.
+// 구현: StatefulWidget을 상속받아 State를 구현합니다. State 클래스는 위젯의 상태를 관리하며, build 메서드를 통해 UI를 반환합니다. State 객체는 위젯의 생명주기 동안 유지됩니다.
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -26,19 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.all(16.0),
-          child: TextField(
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: '제품명/제품코드/주성분코드/업체명을 입력하세요',
-            ),
-            onSubmitted: (String value) {
-              setState(() {
-                _submittedValue = value;
-              });
-              print('입력한 값: $_submittedValue');
-              // 필요한 경우 다른 동작 수행
-            },
-          ),
+          child: CustomShapeWidget(),
         ),
         GestureDetector(
           onTap: _openNaverMap, // _openNaverMap 함수를 직접 호출

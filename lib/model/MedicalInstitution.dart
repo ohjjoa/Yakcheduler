@@ -9,8 +9,6 @@ class MedicalInstitution {
   final double wgs84Lat; // 위도
   final double wgs84Lon; // 경도
 
-
-
   MedicalInstitution({
     required this.dutyAddr,
     required this.dutyName,
